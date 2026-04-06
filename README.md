@@ -28,3 +28,16 @@ Order summary & status
 Fully structured backend APIs
 CRUD operations
 Secure API endpoints
+
+🛠️ Tech Stack
+Frontend:
+React.js
+Tailwind CSS / CSS
+Axios
+Backend:
+Node.js
+Express.js
+MongoDB (Mongoose)
+Authentication:
+JSON Web Token (JWT)
+bcrypt.js (password hashing)
