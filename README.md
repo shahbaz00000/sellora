@@ -3,28 +3,28 @@
 A full-featured E-commerce web application built using the MERN stack (MongoDB, Express.js, React.js, Node.js).
 This project includes secure authentication, RESTful APIs, cart management, order processing, and address handling.
 
-# 🚀 Features
-## 🔐 JWT Authentication
+<h1>🚀 Features <h1/>
+<h3>🔐JWT Authentication
 User signup & login
 Secure token-based authentication
 Protected routes
-## 📦 Product Management
+<h3>📦 Product Management</h3>
 View all products
 Product details page
 API-based product fetching
-## 🛒 Cart Functionality
+<h3>🛒 Cart Functionality</h3>
 Add to cart
 Remove from cart
 Update quantity
 Persistent cart
-## 📍 Address Management
+<h3>📍 Address Management</h3> 
 Add / Update delivery address
 Multiple address support
-## 📦 Order System
+<h3>📦 Order System</h3>
 Place orders
 View order history
 Order summary & status
-## 🔗 REST API Integration
+<h3>🔗 REST API Integration</h3>
 Fully structured backend APIs
 CRUD operations
 Secure API endpoints
