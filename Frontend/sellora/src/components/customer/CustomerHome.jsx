@@ -1,16 +1,18 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchCustomerProduct } from '../../stores/slice/customerSlice';
-import CardProduct from './CardProduct';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCustomerProduct } from "../../stores/slice/customerSlice";
+import CardProduct from "./CardProduct";
+import Footer from "../Footer/Footer";
 
 const CustomerHome = () => {
-
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchCustomerProduct())
+    dispatch(fetchCustomerProduct());
   }, []);
 
-  const { products, isLoading, isError } = useSelector((state) => state.customer);
+  const { products, isLoading, isError } = useSelector(
+    (state) => state.customer,
+  );
   console.log(products);
 
   if (isLoading) {
@@ -44,11 +46,11 @@ const CustomerHome = () => {
   }
 
   return (
-  <>
-    <CardProduct products={products}/>
-  </>
-);
+    <>
+      <CardProduct products={products} />
+      <Footer className="sticky bottom" />
+    </>
+  );
+};
 
-}
-
-export default CustomerHome
+export default CustomerHome;

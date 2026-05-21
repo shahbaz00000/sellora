@@ -1,13 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const CardProduct = ({ products }) => {
-  let totalRatingSum = 0;
-  let Rating = products.map((product) =>
-    product.reviews.map((review) => (totalRatingSum += review.rating)),
-  );
-  console.log("totalRating", totalRatingSum);
-
+const ProductCard = ({ products }) => {
   return (
     <>
       <div className="p-6 bg-gray-50 min-h-screen">
@@ -71,7 +65,7 @@ const CardProduct = ({ products }) => {
                 {/* Rating (optional UI boost) */}
                 <div className="flex items-center gap-1 text-yellow-500 text-xs mt-1">
                   ⭐⭐⭐⭐☆
-                  <span className="text-gray-500">{totalRatingSum}</span>
+                  <span className="text-gray-500">(120)</span>
                 </div>
               </div>
             </Link>
@@ -82,4 +76,4 @@ const CardProduct = ({ products }) => {
   );
 };
 
-export default CardProduct;
+export default ProductCard;

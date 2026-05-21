@@ -1,20 +1,18 @@
-import React, { useRef, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { clearError, login, setError } from '../../stores/slice/authslice';
-
+import React, { useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { clearError, login, setError } from "../../stores/slice/authslice";
 
 const Login = () => {
-
   const emailRef = useRef();
   const passwordRef = useRef();
 
   const navigate = useNavigate();
 
   // errro Handler state
- const {errorMessage} = useSelector((state) => state.auth)
+  const { errorMessage } = useSelector((state) => state.auth);
 
-  const dispatch = useDispatch() 
+  const dispatch = useDispatch();
 
   const handleLoginForm = async (e) => {
     e.preventDefault();
@@ -26,24 +24,23 @@ const Login = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({ email, password }),
       });
       const data = await res.json();
-      if(res.status ===200){
+      if (res.status === 200) {
         console.log(data);
         dispatch(clearError());
         dispatch(login(data));
-        navigate("/home");
-      }else{
+        navigate("/");
+      } else {
         dispatch(setError(data.errorMessage));
       }
     } catch (error) {
       dispatch(setError("internal server error"));
     }
-  }
+  };
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-100">
-
       <form
         onSubmit={handleLoginForm}
         className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md space-y-4"
@@ -79,7 +76,7 @@ const Login = () => {
         </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
